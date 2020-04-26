@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" fill="outline" routerLink="/item" routerDirection="forward">
+        <ion-icon name="add"></ion-icon>
+        Add
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img src="/assets/dog1.gif">
+        </ion-thumbnail>
+        <ion-label>
+          Pet List Sample Application
+          <p>This is the Blueprint Application, which deliver a set of basic skills regarding Ionic.</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of itemService.items" >
+        <ion-item>
+          <ion-label>
+            {{item.name}}
+          </ion-label>
+        </ion-item>
+        <ion-item-options>
+          <ion-item-option color="primary" (click)="updateItem(item.id)">
+            <ion-icon slot="start" name="swap"></ion-icon>
+            Update
+          </ion-item-option>
+          <ion-item-option color="secondary" (click)="deleteItem(item)">
+            <ion-icon slot="start" name="trash"></ion-icon>
+            Delete
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>

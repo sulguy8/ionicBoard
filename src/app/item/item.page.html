@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">ID</ion-label>
+    <ion-input type="text" [(ngModel)]="item.id"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input type="text" [(ngModel)]="item.name"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="saveItem()">Save</ion-button>
+</ion-content>
